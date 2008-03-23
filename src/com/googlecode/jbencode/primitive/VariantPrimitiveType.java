@@ -21,6 +21,7 @@ public abstract class VariantPrimitiveType extends PrimitiveType {
 	@Override
 	protected void writePrefix(OutputStream os) throws IOException {
 		os.write(prefix);
+		writeLength(os);
 	}
 	
 	protected final void writeLength(OutputStream os) throws IOException {
