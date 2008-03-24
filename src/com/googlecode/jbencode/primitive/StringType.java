@@ -12,7 +12,7 @@ import java.io.OutputStream;
 public abstract class StringType extends VariantPrimitiveType {
 	
 	public StringType() {
-		super(' ');
+		super((byte) 0);
 	}
 	
 	@Override

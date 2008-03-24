@@ -12,7 +12,7 @@ import java.io.OutputStream;
 public abstract class ListType extends CompositeType {
 
 	public ListType() {
-		super('l');
+		super((byte) 'l');
 	}
 
 	@Override

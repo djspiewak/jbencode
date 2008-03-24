@@ -10,9 +10,9 @@ import java.io.OutputStream;
  * @author Daniel Spiewak
  */
 public abstract class InvariantPrimitiveType extends PrimitiveType {
-	private final char prefix;
+	private final byte prefix;
 	
-	public InvariantPrimitiveType(char prefix) {
+	public InvariantPrimitiveType(byte prefix) {
 		this.prefix = prefix;
 	}
 	

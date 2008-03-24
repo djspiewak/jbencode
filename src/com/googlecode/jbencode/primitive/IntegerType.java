@@ -13,7 +13,7 @@ public class IntegerType extends InvariantPrimitiveType {
 	private final long value;
 	
 	public IntegerType(long value) {
-		super('i');
+		super((byte) 'i');
 		
 		this.value = value;
 	}

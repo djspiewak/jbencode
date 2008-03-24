@@ -15,7 +15,7 @@ import java.util.TreeSet;
 public abstract class DictionaryType extends CompositeType {
 	
 	public DictionaryType() {
-		super('d');
+		super((byte) 'd');
 	}
 	
 	@Override

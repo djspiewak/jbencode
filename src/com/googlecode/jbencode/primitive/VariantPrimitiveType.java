@@ -10,9 +10,9 @@ import java.io.OutputStream;
  * @author Daniel Spiewak
  */
 public abstract class VariantPrimitiveType extends PrimitiveType {
-	private final char prefix;
+	private final byte prefix;
 	
-	public VariantPrimitiveType(char prefix) {
+	public VariantPrimitiveType(byte prefix) {
 		this.prefix = prefix;
 	}
 	

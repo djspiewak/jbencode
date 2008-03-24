@@ -12,9 +12,9 @@ import com.googlecode.jbencode.Type;
  * @author Daniel Spiewak
  */
 public abstract class CompositeType implements Type {
-	private final char prefix;
+	private final byte prefix;
 	
-	public CompositeType(char prefix) {
+	public CompositeType(byte prefix) {
 		this.prefix = prefix;
 	}
 
