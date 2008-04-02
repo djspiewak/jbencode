@@ -20,6 +20,6 @@ public class IntegerType extends InvariantPrimitiveType {
 	
 	@Override
 	protected void writeValue(OutputStream os) throws IOException {
-		os.write(Long.toString(value).getBytes());
+		os.write(Long.toString(value).getBytes("US-ASCII"));
 	}
 }

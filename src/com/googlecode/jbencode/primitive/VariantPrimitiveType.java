@@ -25,7 +25,7 @@ public abstract class VariantPrimitiveType extends PrimitiveType {
 	}
 	
 	protected final void writeLength(OutputStream os) throws IOException {
-		os.write(Long.toString(getLength()).getBytes());
+		os.write(Long.toString(getLength()).getBytes("US-ASCII"));
 		os.write(':');
 	}
 
