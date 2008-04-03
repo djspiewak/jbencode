@@ -9,7 +9,7 @@ import java.io.InputStream;
 /**
  * @author Daniel Spiewak
  */
-class SubStream extends InputStream {
+public class SubStream extends InputStream {
 	private final InputStream is;
 	private final long length;
 	

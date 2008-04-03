@@ -3,9 +3,11 @@
  */
 package com.googlecode.jbencode;
 
+import java.io.IOException;
+
 /**
  * @author Daniel Spiewak
  */
 public interface Value<T> {
-	public T resolve();
+	public T resolve() throws IOException;
 }

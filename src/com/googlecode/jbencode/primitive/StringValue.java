@@ -3,22 +3,43 @@
  */
 package com.googlecode.jbencode.primitive;
 
+import java.io.IOException;
 import java.io.InputStream;
+
+import com.googlecode.jbencode.Parser;
 
 /**
  * @author Daniel Spiewak
  */
 public class StringValue implements VariantValue<byte[]> {
+	private final InputStream is;
+	private final long length;
+	
+	private boolean resolved = false;
+	
+	StringValue(Parser p, InputStream is) throws IOException {
+		this.is = is;
+		
+		this.length = is.available();
+	}
 	
 	public InputStream getStream() {
-		return null;
+		return is;
 	}
 
-	public byte[] resolve() {
-		return null;
+	public byte[] resolve() throws IOException {
+		if (resolved || is.available() == 0) {
+			throw new IOException("Value already resolved");
+		}
+		resolved = true;
+		
+		byte[] bytes = new byte[is.available()];
+		is.read(bytes);
+		
+		return bytes;
 	}
 
-	public long length() {
-		return 0;
+	public long length() throws IOException {
+		return length;
 	}
 }
