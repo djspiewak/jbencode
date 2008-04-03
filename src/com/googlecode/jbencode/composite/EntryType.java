@@ -12,7 +12,7 @@ import com.googlecode.jbencode.primitive.StringType;
 /**
  * @author Daniel Spiewak
  */
-public final class EntryType<T extends StringType & Comparable<T>> implements Type, Comparable<EntryType<T>> {
+public class EntryType<T extends StringType & Comparable<T>> implements Type, Comparable<EntryType<T>> {
 	private final T key;
 	private final Type value;
 	
