@@ -8,12 +8,12 @@ import java.io.InputStream;
 import java.util.Iterator;
 
 import com.googlecode.jbencode.Parser;
-import com.googlecode.jbencode.SubStream;
 import com.googlecode.jbencode.Value;
 import com.googlecode.jbencode.primitive.StringValue;
 import com.googlecode.jbencode.util.None;
 import com.googlecode.jbencode.util.Option;
 import com.googlecode.jbencode.util.Some;
+import com.googlecode.jbencode.util.SubStream;
 
 /**
  * @author Daniel Spiewak

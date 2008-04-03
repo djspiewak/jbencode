@@ -1,7 +1,7 @@
 /*
  * Created on Mar 23, 2008
  */
-package com.googlecode.jbencode;
+package com.googlecode.jbencode.util;
 
 import java.io.IOException;
 import java.io.InputStream;
