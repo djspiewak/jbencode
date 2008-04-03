@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="JBencode" default="build">
+	
+	<target name="init">
+		<mkdir dir="bin"/>
+	</target>
+	
+	<target name="build" depends="init">
+		<javac srcdir="src" destdir="bin" debug="yes" target="1.5"/>
+	</target>
+	
+	<target name="jar">
+		<antcall target="clean"/>
+		<antcall target="build"/>
+		
+		<jar destfile="jbencode.jar" basedir="bin"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+</project>
