@@ -17,8 +17,8 @@ public abstract class ListType extends CompositeType {
 
 	@Override
 	protected final void writeValue(OutputStream os) throws IOException {
-		populate(new ListValueStream(os));
+		populate(new ListTypeStream(os));
 	}
 	
-	protected abstract void populate(ListValueStream list) throws IOException;
+	protected abstract void populate(ListTypeStream list) throws IOException;
 }

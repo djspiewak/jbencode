@@ -11,14 +11,14 @@ import com.googlecode.jbencode.Type;
 /**
  * @author Daniel Spiewak
  */
-public final class ListValueStream {
+public final class ListTypeStream {
 	private final OutputStream os;
 	
-	ListValueStream(OutputStream os) {
+	ListTypeStream(OutputStream os) {
 		this.os = os;
 	}
 	
-	public void add(Type value) throws IOException {
-		value.write(os);
+	public void add(Type type) throws IOException {
+		type.write(os);
 	}
 }
