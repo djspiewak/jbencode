@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.googlecode.jbencode.Parser;
 import com.googlecode.jbencode.Value;
 import com.googlecode.jbencode.composite.DictionaryValue;
-import com.googlecode.jbencode.composite.EntryPair;
+import com.googlecode.jbencode.composite.EntryValue;
 import com.googlecode.jbencode.composite.ListValue;
 import com.googlecode.jbencode.primitive.IntegerValue;
 import com.googlecode.jbencode.primitive.StringValue;
@@ -36,7 +36,7 @@ public class ParserTest {
 				DictionaryValue dict = (DictionaryValue) value;
 				
 				System.out.println('{');
-				for (EntryPair pair : dict) {
+				for (EntryValue pair : dict) {
 					System.out.print("  \"" + new String(pair.getKey().resolve()) + "\" -> ");
 					
 					if (pair.getValue() instanceof IntegerValue) {

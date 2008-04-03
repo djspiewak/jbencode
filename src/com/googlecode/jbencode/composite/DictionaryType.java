@@ -20,13 +20,13 @@ public abstract class DictionaryType extends CompositeType {
 	
 	@Override
 	protected final void writeValue(OutputStream os) throws IOException {
-		final SortedSet<Key<?>> keys = new TreeSet<Key<?>>();
-		populate(keys);
+		final SortedSet<EntryType<?>> entries = new TreeSet<EntryType<?>>();
+		populate(entries);
 		
-		for (Key<?> key : keys) {
-			key.write(os);
+		for (EntryType<?> entry : entries) {
+			entry.write(os);
 		}
 	}
 	
-	protected abstract void populate(SortedSet<Key<?>> keys);
+	protected abstract void populate(SortedSet<EntryType<?>> entries);
 }

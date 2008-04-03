@@ -12,11 +12,11 @@ import com.googlecode.jbencode.primitive.StringType;
 /**
  * @author Daniel Spiewak
  */
-public final class Key<T extends StringType & Comparable<T>> implements Type, Comparable<Key<T>> {
+public final class EntryType<T extends StringType & Comparable<T>> implements Type, Comparable<EntryType<T>> {
 	private final T key;
 	private final Type value;
 	
-	public Key(T key, Type value) {
+	public EntryType(T key, Type value) {
 		this.key = key;
 		this.value = value;
 	}
@@ -26,7 +26,7 @@ public final class Key<T extends StringType & Comparable<T>> implements Type, Co
 		value.write(os);
 	}
 
-	public int compareTo(Key<T> o) {
+	public int compareTo(EntryType<T> o) {
 		return o.key.compareTo(key);
 	}
 }

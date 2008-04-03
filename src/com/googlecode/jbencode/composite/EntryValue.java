@@ -11,7 +11,7 @@ import com.googlecode.jbencode.primitive.StringValue;
 /**
  * @author Daniel Spiewak
  */
-public class EntryPair implements Value<EntryPair> {
+public class EntryValue implements Value<EntryValue> {
 	private final DictionaryValue parent;
 	
 	private StringValue key;
@@ -19,11 +19,11 @@ public class EntryPair implements Value<EntryPair> {
 	
 	private boolean resolved = false;
 	
-	EntryPair(DictionaryValue parent) {
+	EntryValue(DictionaryValue parent) {
 		this.parent = parent;
 	}
 
-	public EntryPair resolve() throws IOException {
+	public EntryValue resolve() throws IOException {
 		if (resolved) {
 			throw new IOException("Value already resolved");
 		}

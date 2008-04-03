@@ -13,8 +13,8 @@ import com.googlecode.jbencode.Prefix;
  * @author Daniel Spiewak
  */
 @Prefix('d')
-public class DictionaryValue extends CompositeValue<DictionaryValue, EntryPair> {
-	private EntryPair previous;
+public class DictionaryValue extends CompositeValue<DictionaryValue, EntryValue> {
+	private EntryValue previous;
 	
 	public DictionaryValue(Parser p, InputStream is) {
 		super(p, is);
@@ -22,13 +22,13 @@ public class DictionaryValue extends CompositeValue<DictionaryValue, EntryPair> 
 		previous = null;
 	}
 
-	public EntryPair next() {
+	public EntryValue next() {
 		try {
 			if (previous != null) {
 				previous.resolve();
 			}
 			
-			return previous = new EntryPair(this);
+			return previous = new EntryValue(this);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
