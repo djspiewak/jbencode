@@ -16,6 +16,8 @@ import com.googlecode.jbencode.util.Some;
 import com.googlecode.jbencode.util.SubStream;
 
 /**
+ * Implementation of a trivial LR parser for Bencode.
+ * 
  * @author Daniel Spiewak
  */
 public abstract class CompositeValue<T extends CompositeValue<T, V>, V extends Value<?>> 
