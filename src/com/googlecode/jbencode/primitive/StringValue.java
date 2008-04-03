@@ -17,7 +17,7 @@ public class StringValue implements VariantValue<byte[]> {
 	
 	private boolean resolved = false;
 	
-	StringValue(Parser p, InputStream is) throws IOException {
+	public StringValue(Parser p, InputStream is) throws IOException {
 		this.is = is;
 		
 		this.length = is.available();
@@ -37,6 +37,10 @@ public class StringValue implements VariantValue<byte[]> {
 		is.read(bytes);
 		
 		return bytes;
+	}
+	
+	public boolean isResolved() {
+		return resolved;
 	}
 
 	public long length() throws IOException {

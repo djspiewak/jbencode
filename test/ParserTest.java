@@ -1,3 +1,5 @@
+import static org.junit.Assert.fail;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
@@ -8,12 +10,16 @@ import com.googlecode.jbencode.Value;
 import com.googlecode.jbencode.composite.DictionaryValue;
 import com.googlecode.jbencode.composite.EntryPair;
 import com.googlecode.jbencode.composite.ListValue;
+import com.googlecode.jbencode.primitive.IntegerValue;
+import com.googlecode.jbencode.primitive.StringValue;
 
 /*
  * Created on Apr 2, 2008
  */
 
 /**
+ * Joke of a unit test
+ * 
  * @author Daniel Spiewak
  */
 public class ParserTest {
@@ -29,9 +35,29 @@ public class ParserTest {
 			if (value instanceof DictionaryValue) {
 				DictionaryValue dict = (DictionaryValue) value;
 				
+				System.out.println('{');
 				for (EntryPair pair : dict) {
+					System.out.print("  \"" + new String(pair.getKey().resolve()) + "\" -> ");
 					
+					if (pair.getValue() instanceof IntegerValue) {
+						System.out.println(pair.getValue().resolve().toString());
+					} else if (pair.getValue() instanceof StringValue) {
+						System.out.println('"' + new String(((StringValue) pair.getValue()).resolve()) + '"');
+					} else {
+						fail("Unrecognized type");
+					}
 				}
+				System.out.println('}');
+			} else if (value instanceof StringValue) {
+				System.out.println(new String(((StringValue) value).resolve()));
+			} else if (value instanceof ListValue) {
+				System.out.println("[");
+				for (Value<?> subValue : (ListValue) value) {
+					System.out.println("  " + subValue.resolve().toString());
+				}
+				System.out.println("]");
+			} else {
+				fail("Unrecognized type");
 			}
 		}
 	}

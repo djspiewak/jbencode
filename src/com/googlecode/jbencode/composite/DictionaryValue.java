@@ -3,6 +3,7 @@
  */
 package com.googlecode.jbencode.composite;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import com.googlecode.jbencode.Parser;
@@ -13,19 +14,23 @@ import com.googlecode.jbencode.Prefix;
  */
 @Prefix('d')
 public class DictionaryValue extends CompositeValue<DictionaryValue, EntryPair> {
+	private EntryPair previous;
 	
-	DictionaryValue(Parser p, InputStream is) {
-	}
-
-	public DictionaryValue resolve() {
-		return this;
-	}
-
-	public boolean hasNext() {
-		return false;
+	public DictionaryValue(Parser p, InputStream is) {
+		super(p, is);
+		
+		previous = null;
 	}
 
 	public EntryPair next() {
-		return null;
+		try {
+			if (previous != null) {
+				previous.resolve();
+			}
+			
+			return previous = new EntryPair(this);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

@@ -10,4 +10,5 @@ import java.io.IOException;
  */
 public interface Value<T> {
 	public T resolve() throws IOException;
+	public boolean isResolved();
 }

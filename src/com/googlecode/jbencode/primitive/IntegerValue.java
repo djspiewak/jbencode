@@ -19,7 +19,7 @@ public class IntegerValue implements Value<Long> {
 	
 	private boolean resolved = false;
 	
-	IntegerValue(Parser p, InputStream is) {
+	public IntegerValue(Parser p, InputStream is) {
 		this.is = is;
 	}
 	
@@ -37,8 +37,10 @@ public class IntegerValue implements Value<Long> {
 			int digit = b - '0';
 			
 			if (digit < 0 || digit > 9) {
-				if (digit == '-') {
+				if (b == '-') {
 					negative = true;
+				} else if (b == 'e') {
+					break;
 				} else {
 					throw new IOException("Unexpected character in integer value: " + Character.forDigit(b, 10));
 				}
@@ -52,5 +54,9 @@ public class IntegerValue implements Value<Long> {
 		}
 		
 		return value;
+	}
+	
+	public boolean isResolved() {
+		return resolved;
 	}
 }
