@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.googlecode.jbencode.Parser;
-import com.googlecode.jbencode.Prefix;
 import com.googlecode.jbencode.Value;
+import com.googlecode.jbencode.ValuePrefix;
 
 /**
  * @author Daniel Spiewak
  */
-@Prefix('i')
+@ValuePrefix('i')
 public class IntegerValue implements Value<Long> {
 	private final InputStream is;
 	

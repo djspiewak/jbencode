@@ -7,13 +7,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.googlecode.jbencode.Parser;
-import com.googlecode.jbencode.Prefix;
 import com.googlecode.jbencode.Value;
+import com.googlecode.jbencode.ValuePrefix;
 
 /**
  * @author Daniel Spiewak
  */
-@Prefix('l')
+@ValuePrefix('l')
 public class ListValue extends CompositeValue<ListValue, Value<?>> {
 
 	public ListValue(Parser parser, InputStream is) {

@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.googlecode.jbencode.Parser;
-import com.googlecode.jbencode.Prefix;
+import com.googlecode.jbencode.ValuePrefix;
 
 /**
  * @author Daniel Spiewak
  */
-@Prefix('d')
+@ValuePrefix('d')
 public class DictionaryValue extends CompositeValue<DictionaryValue, EntryValue> {
 	private EntryValue previous;
 	

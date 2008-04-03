@@ -29,7 +29,7 @@ public final class Parser {
 	}
 	
 	private final void addType(Class<? extends Value<?>> type) {
-		valueTypes.put(type.getAnnotation(Prefix.class).value(), type);
+		valueTypes.put(type.getAnnotation(ValuePrefix.class).value(), type);
 	}
 	
 	public Class<? extends Value<?>> getValueType(byte b) {
