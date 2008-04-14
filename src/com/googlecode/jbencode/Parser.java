@@ -23,13 +23,13 @@ public final class Parser {
 	public Parser() {
 		valueTypes = new HashMap<Byte, Class<? extends Value<?>>>();
 		
-		addType(IntegerValue.class);
-		addType(ListValue.class);
-		addType(DictionaryValue.class);
+		addValue(IntegerValue.class);
+		addValue(ListValue.class);
+		addValue(DictionaryValue.class);
 	}
 	
-	private final void addType(Class<? extends Value<?>> type) {
-		valueTypes.put(type.getAnnotation(ValuePrefix.class).value(), type);
+	public final void addValue(Class<? extends Value<?>> value) {
+		valueTypes.put(value.getAnnotation(ValuePrefix.class).value(), value);
 	}
 	
 	public Class<? extends Value<?>> getValueType(byte b) {
