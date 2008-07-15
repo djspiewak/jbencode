@@ -3,8 +3,6 @@ import static org.junit.Assert.fail;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
-import org.junit.Test;
-
 import com.googlecode.jbencode.Parser;
 import com.googlecode.jbencode.Value;
 import com.googlecode.jbencode.composite.DictionaryValue;
@@ -24,8 +22,7 @@ import com.googlecode.jbencode.primitive.StringValue;
  */
 public class ParserTest {
 
-	@Test
-	public void testParse() throws IOException {
+	public static void main(String[] args) throws IOException {
 		Parser parser = new Parser();
 		ByteArrayInputStream is = new ByteArrayInputStream(
 				"ld5:Helloi5e5:World7:Testing4:Fivei4ee10:Test Valueli123ei456ei7890eee".getBytes());
