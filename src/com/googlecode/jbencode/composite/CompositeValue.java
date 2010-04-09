@@ -113,7 +113,7 @@ public abstract class CompositeValue<T extends CompositeValue<T, V>, V extends V
 			
 			if (valueType != null) {
 				return previous = Parser.createValue(valueType, parser, is);
-			} else if (b > '0' && b <= '9') {
+			} else if (b >= '0' && b <= '9') {
 				return previous = readString(b - '0');
 			} else if (b == ' ' || b == '\n' || b == '\r' || b == '\t') {
 				return parse();		// loop state
