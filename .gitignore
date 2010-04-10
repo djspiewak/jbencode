@@ -1,2 +1,5 @@
 target/
 reports/
+.classpath
+.project
+.settings/
